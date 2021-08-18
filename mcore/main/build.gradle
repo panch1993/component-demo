@@ -59,6 +59,7 @@ dependencies {
 
     implementation project(':mbase:libBase')
     kapt config.dependencies.arouterCompiler
+    kapt config.dependencies.daggerCompiler
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

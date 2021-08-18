@@ -2,6 +2,13 @@ def config = rootProject.ext
 
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
+//apply plugin: 'kotlin-kapt'
+//
+//kapt {
+//    arguments {
+//        arg("AROUTER_MODULE_NAME", project.getName())
+//    }
+//}
 
 android {
     compileSdkVersion config.android.compileSdkVersion
@@ -48,6 +55,8 @@ dependencies {
     api config.dependencies.glide
     api config.dependencies.rxpermissions
     api config.dependencies.logger
+    api config.dependencies.dagger
+//    kapt config.dependencies.daggerCompiler
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
