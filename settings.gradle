@@ -1,0 +1,6 @@
+include ':mcore:weather'
+include ':mpublic:pay'
+include ':mbase:libBase'
+include ':mcore:main'
+include ':app'
+rootProject.name = "component"
