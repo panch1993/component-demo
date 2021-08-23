@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.orhanobut.logger.Logger
 import com.pans.libbase.model.User
-import com.pans.m.dagger.DaggerApplicationComponent
+import com.pans.m.MainApplication
 import com.pans.m.dagger.DaggerUserComponent
+import com.pans.m.net.MainApiService
+import retrofit2.Retrofit
 import javax.inject.Inject
 
 @Route(path = "/main/main")
@@ -18,20 +20,19 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var user2: User
 
-    /* @Inject
+    @Inject
      lateinit var retrofit: Retrofit
 
-     */
     /**
      * 若声明作用域,形成局部单例.
      * 配合application component 可全局单例
      * retrofit2 == retrofit = true
-     *//*
+     */
     @Inject
     lateinit var retrofit2: Retrofit
 
     @Inject
-    lateinit var api: MainApiService*/
+    lateinit var api: MainApiService
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         //user可局部单例,application可全局单例
         DaggerUserComponent.builder()
-            .applicationComponent(DaggerApplicationComponent.create())
+            .applicationComponent(MainApplication.applicationComponent)
             .build().inject(this)
         Logger.i(user.toString())
         Logger.i(user2.toString())
