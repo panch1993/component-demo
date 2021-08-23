@@ -1,5 +1,6 @@
 package com.pans.m.main
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var api: MainApiService
 
+    @Inject
+    lateinit var context: Context
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,10 +50,8 @@ class MainActivity : AppCompatActivity() {
         DaggerUserComponent.builder()
             .applicationComponent(MainApplication.applicationComponent)
             .build().inject(this)
-        Logger.i(user.toString())
-        Logger.i(user2.toString())
-//        Logger.i(retrofit.toString())
-//        Logger.i(retrofit2.toString())
-//        Logger.i(api.toString())
+        Logger.i(user.toString() + user2.toString())
+        Logger.i(retrofit.toString() + retrofit2.toString())
+        Logger.i(context.toString())
     }
 }

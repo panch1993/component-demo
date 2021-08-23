@@ -6,6 +6,7 @@ import com.orhanobut.logger.Logger;
 import com.pans.libbase.app.IApp;
 import com.pans.m.dagger.ApplicationComponent;
 import com.pans.m.dagger.DaggerApplicationComponent;
+import com.pans.m.dagger.NetModule;
 
 /**
  * Create by panchenhuan on 2021/8/23
@@ -25,7 +26,10 @@ public class MainApplication extends Application implements IApp {
 
     @Override
     public void initModuleApplication(Application context) {
-        applicationComponent = DaggerApplicationComponent.create();
+        Logger.d(context.toString());
+//        applicationComponent = DaggerApplicationComponent.create();
+        //传入 带参module
+        applicationComponent = DaggerApplicationComponent.builder().netModule(new NetModule(context)).build();
     }
 
 }

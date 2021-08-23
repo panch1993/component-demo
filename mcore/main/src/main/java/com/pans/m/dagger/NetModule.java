@@ -1,5 +1,8 @@
 package com.pans.m.dagger;
 
+import android.app.Application;
+import android.content.Context;
+
 import com.pans.m.net.MainApiService;
 
 import dagger.Module;
@@ -14,6 +17,18 @@ import retrofit2.Retrofit;
  */
 @Module //声明为提供生成对象实例的module
 public class NetModule {
+
+    private Application application;
+
+    //构造函数 可通过builder()传入.
+    public NetModule(Application application) {
+        this.application = application;
+    }
+
+    @Provides
+    Context provdeContext() {
+        return application.getApplicationContext();
+    }
 
     /**
      * 2.告知dagger  通过provides注解获取注入对象实例 (无法通过构造函数时使用)
