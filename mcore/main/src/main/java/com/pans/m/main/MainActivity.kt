@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
             .build().inject(this)
         Logger.i(user.toString())
         Logger.i(user2.toString())
-//        Logger.i(retrofit.toString())
-//        Logger.i(retrofit2.toString())
-//        Logger.i(api.toString())
+        Logger.i(retrofit.toString())
+        Logger.i(retrofit2.toString())
+        Logger.i(api.toString())
     }
 }

@@ -1,6 +1,7 @@
 package com.pans.m.dagger;
 
 import com.pans.m.main.TestActivity;
+import com.pans.m.net.MainApiService;
 
 import dagger.Component;
 import retrofit2.Retrofit;
@@ -21,4 +22,6 @@ public interface ApplicationComponent {
     void inject(TestActivity mainActivity);
 
     Retrofit re();
+
+    MainApiService api();
 }
