@@ -4,3 +4,4 @@ include ':mbase:libBase'
 include ':mcore:main'
 include ':app'
 rootProject.name = "component"
+include ':mcore:hilt'

@@ -42,6 +42,7 @@ dependencies {
     if (!config.isDebug) {
         implementation project(':mcore:main')
         implementation project(':mcore:weather')
+        implementation project(':mcore:hilt')
     }
 
     testImplementation 'junit:junit:4.13.2'

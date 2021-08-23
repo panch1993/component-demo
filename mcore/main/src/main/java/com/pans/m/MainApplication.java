@@ -26,7 +26,7 @@ public class MainApplication extends Application implements IApp {
 
     @Override
     public void initModuleApplication(Application context) {
-        Logger.d(context.toString());
+//        Logger.d(context.toString());
 //        applicationComponent = DaggerApplicationComponent.create();
         //传入 带参module
         applicationComponent = DaggerApplicationComponent.builder().netModule(new NetModule(context)).build();

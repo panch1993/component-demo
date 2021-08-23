@@ -12,7 +12,7 @@ import com.pans.m.MainApplication
  * walkwindc8@foxmail.com
  * Description:
  */
-class App : Application() {
+public class App : Application() {
     override fun onCreate() {
         super.onCreate()
 

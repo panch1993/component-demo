@@ -12,7 +12,7 @@ import com.pans.m.net.MainApiService
 import retrofit2.Retrofit
 import javax.inject.Inject
 
-@Route(path = "/main/main")
+@Route(path = "/main/MainActivity")
 class MainActivity : AppCompatActivity() {
 
     @Inject

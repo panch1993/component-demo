@@ -16,12 +16,22 @@ class StartActivity : AppCompatActivity() {
     }
 
     fun goMain(view: View) {
-        ARouter.getInstance().build("/main/main").navigation()
+        ARouter.getInstance().build("/main/MainActivity").navigation()
     }
 
     fun goWeather(view: View) {
         ARouter.getInstance().build("/weather/weather")
             .withString("city", "shanghai")
+            .navigation()
+    }
+
+    fun goTest(view: View) {
+        ARouter.getInstance().build("/main/TestActivity")
+            .navigation()
+    }
+
+    fun goHilt(view: View) {
+        ARouter.getInstance().build("/hilt/HiltTestActivity")
             .navigation()
     }
 }
