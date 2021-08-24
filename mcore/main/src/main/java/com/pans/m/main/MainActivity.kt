@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         //user可局部单例,application可全局单例
         DaggerUserComponent.builder()
-            .applicationComponent(MainApplication.applicationComponent)
+            .pApplicationComponent(MainApplication.applicationComponent)
             .build().inject(this)
         Logger.i(user.toString() + user2.toString())
         Logger.i(retrofit.toString() + retrofit2.toString())

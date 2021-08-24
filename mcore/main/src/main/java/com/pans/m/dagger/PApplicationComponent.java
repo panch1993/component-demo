@@ -17,7 +17,7 @@ import retrofit2.Retrofit;
  */
 @MyScope //声明作用域
 @Component(modules = {NetModule.class, SubComponentModule.class, TestModule.class})//注入provide
-public interface ApplicationComponent {
+public interface PApplicationComponent {
 
 
     //*** 交给依赖组件

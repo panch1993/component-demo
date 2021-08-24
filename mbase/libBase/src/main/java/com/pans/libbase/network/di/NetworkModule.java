@@ -30,7 +30,7 @@ public class NetworkModule {
     @Provides
     public Retrofit provideRetrofit(OkHttpClient client) {
         return new Retrofit.Builder()
-                .baseUrl("http://47.242.37.195:2121/")
+                .baseUrl("http://8.210.10.245:8888/")
                 .client(client)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())

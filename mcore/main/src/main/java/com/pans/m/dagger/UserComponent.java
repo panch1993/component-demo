@@ -10,7 +10,7 @@ import dagger.Component;
  * @TIME 21:12.
  */
 @UserScope
-@Component(modules = UserModule.class, dependencies = ApplicationComponent.class)
+@Component(modules = UserModule.class, dependencies = PApplicationComponent.class)
 public interface UserComponent {
 
     void inject(MainActivity mainActivity);

@@ -4,9 +4,9 @@ import android.app.Application;
 
 import com.orhanobut.logger.Logger;
 import com.pans.libbase.app.IApp;
-import com.pans.m.dagger.ApplicationComponent;
-import com.pans.m.dagger.DaggerApplicationComponent;
+import com.pans.m.dagger.DaggerPApplicationComponent;
 import com.pans.m.dagger.NetModule;
+import com.pans.m.dagger.PApplicationComponent;
 
 /**
  * Create by panchenhuan on 2021/8/23
@@ -15,7 +15,7 @@ import com.pans.m.dagger.NetModule;
  */
 public class MainApplication extends Application implements IApp {
 
-    public static ApplicationComponent applicationComponent;
+    public static PApplicationComponent applicationComponent;
 
     @Override
     public void onCreate() {
@@ -29,7 +29,7 @@ public class MainApplication extends Application implements IApp {
 //        Logger.d(context.toString());
 //        applicationComponent = DaggerApplicationComponent.create();
         //传入 带参module
-        applicationComponent = DaggerApplicationComponent.builder().netModule(new NetModule(context)).build();
+        applicationComponent = DaggerPApplicationComponent.builder().netModule(new NetModule(context)).build();
     }
 
 }

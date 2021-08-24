@@ -1,8 +1,8 @@
 package com.pans.m.weather.network;
 
-import com.google.gson.JsonObject;
+import com.pans.libbase.network.response.BaseResponse;
 
-import io.reactivex.Flowable;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 /**
@@ -11,6 +11,7 @@ import retrofit2.http.GET;
  * Description:
  */
 public interface WeatherService {
-    @GET("/weather")
-    Flowable<JsonObject> getWeather();
+
+    @GET("systemParameter/selectSystemParameterEdition")
+    Observable<BaseResponse<SystemParamsBean>> systemInfo();
 }
