@@ -2,7 +2,8 @@ def config = rootProject.ext
 
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
-//apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 //
 //kapt {
 //    arguments {
@@ -56,8 +57,13 @@ dependencies {
     api config.dependencies.rxpermissions
     api config.dependencies.logger
     api config.dependencies.dagger
-    api config.dependencies.hilt
+    //api config.dependencies.hilt
 //    kapt config.dependencies.daggerCompiler
+
+    implementation config.dependencies.hilt
+    kapt config.dependencies.hiltCompiler
+    implementation config.dependencies.hiltviewmodel
+    kapt config.dependencies.hiltvcompiler
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

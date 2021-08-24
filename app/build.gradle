@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 def config = rootProject.ext
 
@@ -44,6 +45,11 @@ dependencies {
         implementation project(':mcore:weather')
         implementation project(':mcore:hilt')
     }
+
+    implementation config.dependencies.hilt
+    kapt config.dependencies.hiltCompiler
+    implementation config.dependencies.hiltviewmodel
+    kapt config.dependencies.hiltvcompiler
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

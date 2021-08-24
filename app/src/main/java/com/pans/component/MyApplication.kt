@@ -6,26 +6,24 @@ import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 import com.pans.m.MainApplication
+import dagger.hilt.android.HiltAndroidApp
 
 /**
- * Create by panchenhuan on 8/17/21
+ * Create by panchenhuan on 2021/8/24
  * walkwindc8@foxmail.com
  * Description:
  */
-public class App : Application() {
+@HiltAndroidApp
+class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-
         if (BuildConfig.DEBUG) {
             ARouter.openDebug()
             ARouter.openLog()
         }
         ARouter.init(this)
-
-
         val build = PrettyFormatStrategy.newBuilder()
             .tag("klog")
-            .methodCount(1)
             .methodCount(1)
             .showThreadInfo(false)
             .build()
@@ -34,7 +32,6 @@ public class App : Application() {
                 return BuildConfig.DEBUG
             }
         })
-
         MainApplication().initModuleApplication(this)
     }
 }

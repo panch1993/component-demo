@@ -6,8 +6,8 @@ if (config.isDebug) {
     apply plugin: "com.android.library"
 }
 apply plugin: "kotlin-android"
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
 kapt {
@@ -61,8 +61,11 @@ dependencies {
 
     implementation project(':mbase:libBase')
     kapt config.dependencies.arouterCompiler
+
     implementation config.dependencies.hilt
     kapt config.dependencies.hiltCompiler
+    implementation config.dependencies.hiltviewmodel
+    kapt config.dependencies.hiltvcompiler
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
