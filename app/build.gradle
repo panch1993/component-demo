@@ -38,7 +38,7 @@ android {
 dependencies {
 
     implementation project(':mbase:libBase')
-    //implementation project(':mbase:libRouter')
+    implementation project(':mpublic:common')
 
     if (!config.isDebug) {
         implementation project(':mcore:main')
@@ -48,8 +48,6 @@ dependencies {
 
     implementation config.dependencies.hilt
     kapt config.dependencies.hiltCompiler
-    implementation config.dependencies.hiltviewmodel
-    kapt config.dependencies.hiltvcompiler
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

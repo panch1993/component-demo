@@ -45,7 +45,6 @@ dependencies {
     api config.library.coreKtx
     api config.library.appcompat
     api config.library.material
-    //api project(':mbase:libRouter')
     api config.dependencies.arouterApi
     api config.dependencies.retrofit
     api config.dependencies.converterGson
@@ -57,13 +56,11 @@ dependencies {
     api config.dependencies.rxpermissions
     api config.dependencies.logger
     api config.dependencies.dagger
-    //api config.dependencies.hilt
-//    kapt config.dependencies.daggerCompiler
 
     implementation config.dependencies.hilt
     kapt config.dependencies.hiltCompiler
-    implementation config.dependencies.hiltviewmodel
-    kapt config.dependencies.hiltvcompiler
+
+    implementation config.dependencies.startup
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

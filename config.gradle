@@ -28,6 +28,7 @@ ext {
     ]
 
     dependencies = [
+            startup       :  'androidx.startup:startup-runtime:1.0.0',
             //路由
             arouterApi       : 'com.alibaba:arouter-api:1.5.2',
             arouterCompiler  : 'com.alibaba:arouter-compiler:1.5.2',
@@ -39,7 +40,7 @@ ext {
             //retrofit
             retrofit         : 'com.squareup.retrofit2:retrofit:2.3.0',
             converterGson    : 'com.squareup.retrofit2:converter-gson:2.3.0',
-            rxAdapter        : 'com.squareup.retrofit2:adapter-rxjava:2.3.0',
+            rxAdapter        : 'com.squareup.retrofit2:adapter-rxjava2:2.3.0',
             okhttpInterceptor: 'com.squareup.okhttp3:logging-interceptor:3.9.0',
             //rxjava
             rxjava           : 'io.reactivex.rxjava2:rxjava:2.2.0',
@@ -51,6 +52,7 @@ ext {
             daggerCompiler   : 'com.google.dagger:dagger-compiler:2.30.1',
             hilt             : 'com.google.dagger:hilt-android:2.28-alpha',
             hiltCompiler     : 'com.google.dagger:hilt-android-compiler:2.28-alpha',
+            //hilt viewmodel
             hiltviewmodel    : 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01',
             hiltvcompiler    : 'androidx.hilt:hilt-compiler:1.0.0-alpha01',
     ]

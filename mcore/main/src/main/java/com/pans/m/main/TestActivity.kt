@@ -3,8 +3,6 @@ package com.pans.m.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.orhanobut.logger.Logger
-import com.pans.m.MainApplication
 import com.pans.m.binds10.AInterface
 import com.pans.m.dagger.CustomQualifier
 import com.pans.m.sub09.Student
@@ -44,10 +42,10 @@ class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //MainApplication.applicationComponent.inject(this)
-        MainApplication.applicationComponent.sf().create().inject(this)
+       /* MainApplication.applicationComponent.sf().create().inject(this)
         Logger.d(student)
         Logger.d(student2)
         Logger.d(student3)
-        Logger.d(aInterface)
+        Logger.d(aInterface)*/
     }
 }

@@ -1,6 +1,7 @@
 package com.pans.libbase.network.di;
 
 import com.pans.libbase.BuildConfig;
+import com.pans.libbase.util.PropertiesUtil;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +14,7 @@ import dagger.hilt.android.components.ApplicationComponent;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -29,10 +30,11 @@ public class NetworkModule {
     @Singleton
     @Provides
     public Retrofit provideRetrofit(OkHttpClient client) {
+        String baseUrl = PropertiesUtil.getProperty("baseUrl");
         return new Retrofit.Builder()
-                .baseUrl("http://8.210.10.245:8888/")
+                .baseUrl(baseUrl)
                 .client(client)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
@@ -41,12 +43,9 @@ public class NetworkModule {
     @Singleton
     @Provides
     public OkHttpClient provideOkHttpClient() {
-        final OkHttpClient.Builder builder =
-                new OkHttpClient.Builder();
-        if (BuildConfig.DEBUG) {
-            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-            builder.addInterceptor(logging);
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        if (PropertiesUtil.boolProperty("netLogEnable", BuildConfig.DEBUG)) {
+            builder.addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY));
         }
         return builder.connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20, TimeUnit.SECONDS)

@@ -4,15 +4,13 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.orhanobut.logger.Logger
+import com.pans.common.constant.RoutePath
 import com.pans.libbase.model.User
-import com.pans.m.MainApplication
-import com.pans.m.dagger.DaggerUserComponent
 import com.pans.m.net.MainApiService
 import retrofit2.Retrofit
 import javax.inject.Inject
 
-@Route(path = "/main/MainActivity")
+@Route(path = RoutePath.MAIN_ACTIVITY)
 class MainActivity : AppCompatActivity() {
 
     @Inject
@@ -47,11 +45,11 @@ class MainActivity : AppCompatActivity() {
         //DaggerApplicationComponent.create().inject(this)
 
         //user可局部单例,application可全局单例
-        DaggerUserComponent.builder()
-            .pApplicationComponent(MainApplication.applicationComponent)
-            .build().inject(this)
-        Logger.i(user.toString() + user2.toString())
-        Logger.i(retrofit.toString() + retrofit2.toString())
-        Logger.i(context.toString())
+        /* DaggerUserComponent.builder()
+             .pApplicationComponent(MainApplication.applicationComponent)
+             .build().inject(this)
+         Logger.i(user.toString() + user2.toString())
+         Logger.i(retrofit.toString() + retrofit2.toString())
+         Logger.i(context.toString())*/
     }
 }

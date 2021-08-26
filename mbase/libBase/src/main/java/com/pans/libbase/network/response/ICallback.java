@@ -1,5 +1,7 @@
 package com.pans.libbase.network.response;
 
+import androidx.annotation.NonNull;
+
 import com.pans.libbase.network.exception.ApiException;
 
 /**
@@ -9,7 +11,7 @@ import com.pans.libbase.network.exception.ApiException;
  */
 public interface ICallback<T> {
 
-    void onSuccess(T data);
+    void onSuccess(@NonNull T data);
 
-    void onFailure(ApiException exception);
+    void onFailure(@NonNull ApiException exception);
 }

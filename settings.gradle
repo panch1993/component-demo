@@ -1,5 +1,5 @@
 include ':mcore:weather'
-include ':mpublic:pay'
+include ':mpublic:common'
 include ':mbase:libBase'
 include ':mcore:main'
 include ':app'

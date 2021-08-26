@@ -1,12 +1,7 @@
 def config = rootProject.ext
 
-if (config.isDebug) {
-    apply plugin: "com.android.application"
-} else {
-    apply plugin: "com.android.library"
-}
+apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
@@ -21,9 +16,6 @@ android {
     buildToolsVersion config.android.buildToolsVersion
 
     defaultConfig {
-        if (config.isDebug) {
-            applicationId config.applicationId.hilt
-        }
         minSdkVersion config.android.minSdkVersion
         targetSdkVersion config.android.targetSdkVersion
         versionCode config.android.versionCode
@@ -45,13 +37,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
     sourceSets {
         main {
-            if (config.isDebug) {
-                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
+            assets {
+                srcDirs 'src/main/assets', 'src/assets'
             }
         }
     }
@@ -60,8 +49,6 @@ android {
 dependencies {
 
     implementation project(':mbase:libBase')
-    implementation project(':mpublic:common')
-    kapt config.dependencies.arouterCompiler
 
     implementation config.dependencies.hilt
     kapt config.dependencies.hiltCompiler
