@@ -14,6 +14,7 @@ ext {
 
     applicationId = [
             app    : "com.pans.component",
+            demo   : "com.pans.demo",
             weather: "com.pans.m.weather",
             main   : "com.pans.m.daggers.main",
             hilt   : "com.pans.m.hilt",
@@ -41,9 +42,10 @@ ext {
             livedata         : 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0',
             viewmodel        : 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0',
             //retrofit
-            retrofit         : 'com.squareup.retrofit2:retrofit:2.3.0',
-            converterGson    : 'com.squareup.retrofit2:converter-gson:2.3.0',
-            rxAdapter        : 'com.squareup.retrofit2:adapter-rxjava2:2.3.0',
+            retrofit         : 'com.squareup.retrofit2:retrofit:2.6.0',
+            converterGson    : 'com.squareup.retrofit2:converter-gson:2.6.0',
+            converterMoshi   : 'com.squareup.retrofit2:converter-moshi:2.6.0',
+            rxAdapter        : 'com.squareup.retrofit2:adapter-rxjava2:2.6.0',
             okhttpInterceptor: 'com.squareup.okhttp3:logging-interceptor:3.9.0',
             //rxjava
             rxjava           : 'io.reactivex.rxjava2:rxjava:2.2.0',

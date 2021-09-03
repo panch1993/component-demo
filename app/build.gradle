@@ -44,6 +44,7 @@ dependencies {
         implementation project(':mcore:main')
         implementation project(':mcore:weather')
         implementation project(':mcore:hilt')
+        implementation project(':mcore:demo')
     }
 
     implementation config.dependencies.hilt

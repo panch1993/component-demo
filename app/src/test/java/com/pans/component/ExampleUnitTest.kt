@@ -1,6 +1,6 @@
 package com.pans.component
 
-import org.junit.Assert.assertEquals
+import com.google.gson.Gson
 import org.junit.Test
 
 /**
@@ -11,6 +11,12 @@ import org.junit.Test
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+
+        val start = System.currentTimeMillis()
+        val g = Gson()
+        val g2 = Gson()
+        val end = System.currentTimeMillis()
+        println(end - start)
+
     }
 }

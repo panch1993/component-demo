@@ -1,21 +1,29 @@
 def config = rootProject.ext
 
-apply plugin: "com.android.library"
+if (config.isDebug) {
+    apply plugin: "com.android.application"
+} else {
+    apply plugin: "com.android.library"
+}
 apply plugin: "kotlin-android"
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
-//
-//kapt {
-//    arguments {
-//        arg("AROUTER_MODULE_NAME", project.getName())
-//    }
-//}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 
 android {
     compileSdkVersion config.android.compileSdkVersion
     buildToolsVersion config.android.buildToolsVersion
 
     defaultConfig {
+        if (config.isDebug) {
+            applicationId config.applicationId.demo
+        }
         minSdkVersion config.android.minSdkVersion
         targetSdkVersion config.android.targetSdkVersion
         versionCode config.android.versionCode
@@ -37,33 +45,29 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding{
+        enabled  = true
+    }
+    sourceSets {
+        main {
+            if (config.isDebug) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
 }
 
 dependencies {
 
-    api config.library.stdlib
-    api config.library.coreKtx
-    api config.library.appcompat
-    api config.library.material
-    api config.dependencies.coroutinesCore
-    api config.dependencies.coroutinesAndroid
-    api config.dependencies.arouterApi
-    api config.dependencies.retrofit
-    api config.dependencies.converterGson
-    api config.dependencies.converterMoshi
-    api config.dependencies.rxAdapter
-    api config.dependencies.rxjava
-    api config.dependencies.rxandroid
-    api config.dependencies.okhttpInterceptor
-    api config.dependencies.glide
-    api config.dependencies.rxpermissions
-    api config.dependencies.logger
-    api config.dependencies.dagger
+    implementation project(':mbase:libBase')
+    implementation project(':mpublic:common')
+
+    kapt config.dependencies.arouterCompiler
 
     implementation config.dependencies.hilt
     kapt config.dependencies.hiltCompiler
-
-    implementation config.dependencies.startup
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

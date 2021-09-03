@@ -35,4 +35,9 @@ class StartActivity : AppCompatActivity() {
         ARouter.getInstance().build("/hilt/HiltTestActivity")
             .navigation()
     }
+
+    fun goDemo(view: View) {
+        ARouter.getInstance().build(RoutePath.DEMO_ACTIVITY)
+            .navigation()
+    }
 }

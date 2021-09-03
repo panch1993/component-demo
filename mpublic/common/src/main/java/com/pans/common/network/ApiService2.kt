@@ -1,7 +1,6 @@
 package com.pans.common.network
 
 import com.pans.common.model.SystemParamsBean
-import io.reactivex.Observable
 import retrofit2.http.GET
 
 /**
@@ -9,7 +8,9 @@ import retrofit2.http.GET
  * walkwindc8@foxmail.com
  * Description:
  */
-interface ApiService {
+interface ApiService2 {
+
     @GET("dddadminuserserver/systemParameter/selectSystemParameterEdition")
-    fun systemInfo(): Observable<BaseResponse<SystemParamsBean>>
+    suspend fun systemInfo(): BaseResponse<SystemParamsBean>
+
 }

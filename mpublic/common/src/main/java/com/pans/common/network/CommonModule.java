@@ -1,5 +1,6 @@
 package com.pans.common.network;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -16,6 +17,12 @@ public class CommonModule {
     @Provides
     ApiService provideApiService(Retrofit retrofit) {
         return retrofit.create(ApiService.class);
+    }
+
+    @Singleton
+    @Provides
+    ApiService2 provideApiService2(@Named("Moshi") Retrofit retrofit) {
+        return retrofit.create(ApiService2.class);
     }
 
 }

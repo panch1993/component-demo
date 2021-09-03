@@ -5,6 +5,7 @@ import com.pans.libbase.util.PropertiesUtil;
 
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -16,6 +17,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.moshi.MoshiConverterFactory;
 
 /**
  * Create by panchenhuan on 2021/8/24
@@ -26,7 +28,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @InstallIn(ApplicationComponent.class)
 public class NetworkModule {
 
-
     @Singleton
     @Provides
     public Retrofit provideRetrofit(OkHttpClient client) {
@@ -36,6 +37,19 @@ public class NetworkModule {
                 .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
+                //.addConverterFactory(MoshiConverterFactory.create())
+                .build();
+    }
+
+    @Named("Moshi")
+    @Singleton
+    @Provides
+    public Retrofit provideRetrofitNormal(OkHttpClient client) {
+        String baseUrl = PropertiesUtil.getProperty("baseUrl");
+        return new Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .client(client)
+                .addConverterFactory(MoshiConverterFactory.create())
                 .build();
     }
 

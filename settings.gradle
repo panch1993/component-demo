@@ -5,3 +5,4 @@ include ':mcore:main'
 include ':app'
 rootProject.name = "component-demo"
 include ':mcore:hilt'
+include ':mcore:demo'
