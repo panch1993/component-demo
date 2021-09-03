@@ -16,7 +16,7 @@
         android:onClick="goTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go test" />
+        android:text="Go coroutine" />
 
     <Button
         android:onClick="goHilt"

@@ -15,7 +15,7 @@ ext {
     applicationId = [
             app    : "com.pans.component",
             weather: "com.pans.m.weather",
-            main   : "com.pans.m.main",
+            main   : "com.pans.m.daggers.main",
             hilt   : "com.pans.m.hilt",
     ]
 
@@ -28,7 +28,10 @@ ext {
     ]
 
     dependencies = [
-            startup       :  'androidx.startup:startup-runtime:1.0.0',
+            startup          : 'androidx.startup:startup-runtime:1.0.0',
+            //协程
+            coroutinesCore   : 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0',
+            coroutinesAndroid: 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0',
             //路由
             arouterApi       : 'com.alibaba:arouter-api:1.5.2',
             arouterCompiler  : 'com.alibaba:arouter-compiler:1.5.2',

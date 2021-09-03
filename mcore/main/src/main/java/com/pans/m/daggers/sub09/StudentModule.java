@@ -1,6 +1,6 @@
-package com.pans.m.sub09;
+package com.pans.m.daggers.sub09;
 
-import com.pans.m.dagger.CustomQualifier;
+import com.pans.m.daggers.dagger.CustomQualifier;
 
 import javax.inject.Named;
 

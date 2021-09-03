@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pans.m.dagger;
+package com.pans.m.daggers.dagger;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 

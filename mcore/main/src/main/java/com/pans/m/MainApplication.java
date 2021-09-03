@@ -4,9 +4,9 @@ import android.app.Application;
 
 import com.orhanobut.logger.Logger;
 import com.pans.libbase.app.IApp;
-import com.pans.m.dagger.DaggerPApplicationComponent;
-import com.pans.m.dagger.NetModule;
-import com.pans.m.dagger.PApplicationComponent;
+import com.pans.m.daggers.dagger.DaggerPApplicationComponent;
+import com.pans.m.daggers.dagger.NetModule;
+import com.pans.m.daggers.dagger.PApplicationComponent;
 
 /**
  * Create by panchenhuan on 2021/8/23

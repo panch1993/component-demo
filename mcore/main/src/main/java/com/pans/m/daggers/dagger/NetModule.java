@@ -1,9 +1,9 @@
-package com.pans.m.dagger;
+package com.pans.m.daggers.dagger;
 
 import android.app.Application;
 import android.content.Context;
 
-import com.pans.m.net.MainApiService;
+import com.pans.m.daggers.net.MainApiService;
 
 import dagger.Module;
 import dagger.Provides;

@@ -1,4 +1,4 @@
-package com.pans.m.dagger;
+package com.pans.m.daggers.dagger;
 
 import com.pans.libbase.model.User;
 

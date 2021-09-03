@@ -8,6 +8,7 @@ package com.pans.common.constant;
 public class RoutePath {
 
     public final static String MAIN_ACTIVITY = "/main/MainActivity";
+    public final static String COROUTINE_ACTIVITY = "/main/CoroutineActivity";
     public final static String WEATHER_ACTIVITY = "/weather/WeatherActivity";
 
 }

@@ -1,4 +1,4 @@
-package com.pans.m.binds10;
+package com.pans.m.daggers.binds10;
 
 /**
  * Create by panchenhuan on 2021/8/23

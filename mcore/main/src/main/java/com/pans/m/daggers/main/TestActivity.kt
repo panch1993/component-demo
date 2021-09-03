@@ -1,11 +1,11 @@
-package com.pans.m.main
+package com.pans.m.daggers.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.pans.m.binds10.AInterface
-import com.pans.m.dagger.CustomQualifier
-import com.pans.m.sub09.Student
+import com.pans.m.daggers.binds10.AInterface
+import com.pans.m.daggers.dagger.CustomQualifier
+import com.pans.m.daggers.sub09.Student
 import javax.inject.Inject
 import javax.inject.Named
 

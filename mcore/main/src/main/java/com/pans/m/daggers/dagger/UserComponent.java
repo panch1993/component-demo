@@ -1,6 +1,6 @@
-package com.pans.m.dagger;
+package com.pans.m.daggers.dagger;
 
-import com.pans.m.main.MainActivity;
+import com.pans.m.daggers.main.MainActivity;
 
 import dagger.Component;
 

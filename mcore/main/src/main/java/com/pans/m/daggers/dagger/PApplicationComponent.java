@@ -1,11 +1,11 @@
-package com.pans.m.dagger;
+package com.pans.m.daggers.dagger;
 
 import android.content.Context;
 
-import com.pans.m.binds10.TestModule;
-import com.pans.m.net.MainApiService;
-import com.pans.m.sub09.StudentComponent;
-import com.pans.m.sub09.SubComponentModule;
+import com.pans.m.daggers.binds10.TestModule;
+import com.pans.m.daggers.net.MainApiService;
+import com.pans.m.daggers.sub09.StudentComponent;
+import com.pans.m.daggers.sub09.SubComponentModule;
 
 import dagger.Component;
 import retrofit2.Retrofit;

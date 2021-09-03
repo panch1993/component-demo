@@ -1,4 +1,4 @@
-package com.pans.m.main
+package com.pans.m.daggers.main
 
 import android.content.Context
 import android.os.Bundle
@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.pans.common.constant.RoutePath
 import com.pans.libbase.model.User
-import com.pans.m.net.MainApiService
+import com.pans.m.daggers.net.MainApiService
 import retrofit2.Retrofit
 import javax.inject.Inject
 
+/**
+ * daggger test activity
+ */
 @Route(path = RoutePath.MAIN_ACTIVITY)
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var user2: User
 
     @Inject
-     lateinit var retrofit: Retrofit
+    lateinit var retrofit: Retrofit
 
     /**
      * 若声明作用域,形成局部单例.

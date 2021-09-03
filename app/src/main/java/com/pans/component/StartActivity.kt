@@ -17,7 +17,7 @@ class StartActivity : AppCompatActivity() {
     }
 
     fun goMain(view: View) {
-        ARouter.getInstance().build("/main/MainActivity").navigation()
+        ARouter.getInstance().build(RoutePath.MAIN_ACTIVITY).navigation()
     }
 
     fun goWeather(view: View) {
@@ -27,7 +27,7 @@ class StartActivity : AppCompatActivity() {
     }
 
     fun goTest(view: View) {
-        ARouter.getInstance().build(RoutePath.MAIN_ACTIVITY)
+        ARouter.getInstance().build(RoutePath.COROUTINE_ACTIVITY)
             .navigation()
     }
 

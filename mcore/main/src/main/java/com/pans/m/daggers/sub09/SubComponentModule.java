@@ -1,4 +1,4 @@
-package com.pans.m.sub09;
+package com.pans.m.daggers.sub09;
 
 import dagger.Module;
 

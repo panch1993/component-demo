@@ -15,6 +15,7 @@ import com.pans.libbase.network.exception.ApiException
 import com.pans.libbase.network.response.ICallback
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_weather.*
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 @Route(path = RoutePath.WEATHER_ACTIVITY)
@@ -28,6 +29,7 @@ class WeatherActivity : AppCompatActivity() {
     @Inject
     lateinit var service: ApiService
 
+    @DelicateCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ARouter.getInstance().inject(this)  // Start auto

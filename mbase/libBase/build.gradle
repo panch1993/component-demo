@@ -45,6 +45,8 @@ dependencies {
     api config.library.coreKtx
     api config.library.appcompat
     api config.library.material
+    api config.dependencies.coroutinesCore
+    api config.dependencies.coroutinesAndroid
     api config.dependencies.arouterApi
     api config.dependencies.retrofit
     api config.dependencies.converterGson

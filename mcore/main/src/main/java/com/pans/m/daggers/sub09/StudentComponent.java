@@ -1,7 +1,7 @@
-package com.pans.m.sub09;
+package com.pans.m.daggers.sub09;
 
-import com.pans.m.dagger.PApplicationComponent;
-import com.pans.m.main.TestActivity;
+import com.pans.m.daggers.dagger.PApplicationComponent;
+import com.pans.m.daggers.main.TestActivity;
 
 import dagger.Subcomponent;
 
